@@ -46,3 +46,11 @@ source("../02 Data Wrangling/Wranglers3.R", echo = TRUE)
 ```{r}
 source("../03 Visualizations/Visualizations3.R", echo = TRUE)
 ```
+
+
+
+![](./categoricals.png)
+
+
+
+![](./categoricals2.png)
