@@ -5,10 +5,44 @@ date: "Saturday, February 28, 2015"
 output: html_document
 ---
 
+
+
 ```{r}
 source("../01 Data/Dataframes.R", echo = TRUE)
 ```
 
+
+
 ```{r}
-source("../02 Data Wrangling/Wranglers.R", echo = TRUE)
+source("../02 Data Wrangling/Wranglers1.R", echo = TRUE)
+```
+
+
+
+```{r}
+source("../03 Visualizations/Visualizations1.R", echo = TRUE)
+```
+
+
+
+```{r}
+source("../02 Data Wrangling/Wranglers2.R", echo = TRUE)
+```
+
+
+
+```{r}
+source("../03 Visualizations/Visualizations2.R", echo = TRUE)
+```
+
+
+
+```{r}
+source("../02 Data Wrangling/Wranglers3.R", echo = TRUE)
+```
+
+
+
+```{r}
+source("../03 Visualizations/Visualizations3.R", echo = TRUE)
 ```
