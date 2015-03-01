@@ -5,3 +5,10 @@ date: "Saturday, February 28, 2015"
 output: html_document
 ---
 
+```{r}
+source("../01 Data/Dataframes.R", echo = TRUE)
+```
+
+```{r}
+source("../02 Data Wrangling/Wranglers.R", echo = TRUE)
+```

@@ -3,4 +3,4 @@ colnames(flightcountriesdf)[3] <- "TOTALNUMROUTES"
 
 flightdf <- flightcitiesdf %>% inner_join(flightcountriesdf, by = c("DEPARTURECOUNTRY", "ARRIVALCOUNTRY")) %>% group_by(DEPARTURECITY) %>% summarize(TOTALDISTANCE = sum(DISTANCE)) %>% arrange(desc(TOTALDISTANCE))
 
-View(flightdf)
+flightdf %>% tbl_df
