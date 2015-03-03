@@ -1,0 +1,1 @@
+flightdf2 <- flightcitiesdf %>% inner_join(flightcountriesdf, by = c("DEPARTURECOUNTRY", "ARRIVALCOUNTRY")) %>% group_by(ARRIVALCITY) %>% summarize(TOTALDISTANCEIN = sum(DISTANCE), NUMFLIGHTS = n(), LONGITUDE = mean(LONGARRIVAL), LATITUDE = mean(LATARRIVAL)) %>% arrange(desc(TOTALDISTANCEIN)) %>% filter(NUMFLIGHTS > 115)
