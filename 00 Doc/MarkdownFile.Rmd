@@ -1,4 +1,4 @@
- ---
+---
 title: "Airline Flight Data"
 author: "Cassie, Caleb & Michael"
 date: "Saturday, February 28, 2015"
@@ -50,7 +50,7 @@ source("../03 Visualizations/Visualizations3.R", echo = TRUE)
 
 
 ```{r}
-source("../03 Visualizations/Visualizations4.R", echo = TRUE)
+source("../03 Visualizations/Visualizations4.R", echo = FALSE)
 ```
 
 
