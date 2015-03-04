@@ -1,8 +1,10 @@
 categoricals <- eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from CITIESTOCITIES"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_mh33483', PASS='orcl_mh33483', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'True'), verbose = TRUE), 1, 2^31-1)))
 
 myplot <- function(df, x) {
+  print(names(df))
+  xLabel <- x
   names(df) <- c("x", "n")
-  ggplot(df, aes(x=x, y=n)) + geom_point()
+  ggplot(df, aes(x=x, y=n)) + geom_point() + xlab(xLabel) + ylab("Number of Flights")
 }
 
 l <- list()
@@ -15,7 +17,7 @@ for (i in names(flightcitiesdf)) {
   }
 }
 
-png("C:/Users/Michael/Documents/DataVisualization/DV_RProject3/00 Doc/categoricals.png", width = 16, height = 16, units = "in", res = 72)
+png("/Users/CassieWang/Documents/DataVisualization/DV_RProject3/00 Doc/categoricals.png", width = 16, height = 16, units = "in", res = 72)
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(2, 2)))   
 
@@ -41,7 +43,7 @@ for (i in names(flightcitiesdf)) {
   }
 }
 
-png("C:/Users/Michael/Documents/DataVisualization/DV_RProject3/00 Doc/categoricals2.png", width = 24, height = 16, units = "in", res = 72)
+png("/Users/CassieWang/Documents/DataVisualization/DV_RProject3/00 Doc/categoricals2.png", width = 24, height = 16, units = "in", res = 72)
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(2, 3)))   
 
