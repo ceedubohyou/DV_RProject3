@@ -5,6 +5,7 @@ date: "Saturday, February 28, 2015"
 output: html_document
 ---
 
+This document combines airline and geographical data from three different tables. The first dataset records airline routes between various cities, their coordinates and distance. The 2nd dataset documents the number of different air routes between countries. The last dataset holds US Cities, their respective states and coordinates.
 
 
 ```{r}
@@ -12,34 +13,41 @@ source("../01 Data/Dataframes.R", echo = TRUE)
 ```
 
 
+First graph is left joined from data from flight data on cities and countries. They are grouped by Departure City with aggregated Distance and Flight Count.
+
 
 ```{r}
 source("../02 Data Wrangling/Wranglers1.R", echo = TRUE)
 ```
 
+This first graph plots each city as a function of Total Number of Flights and Total Distance of Departure Flights. As can clearly be seen, the relationship between number of flights from a city and total flight mileage is positive. An interesting fact can be seen though, by plotting the line of best fit: The slope of the line represents the average distance of a departure flight.
 
 
 ```{r}
 source("../03 Visualizations/Visualizations1.R", echo = TRUE)
 ```
 
+Second graph inner joins flight countries dataframe with the flight city dataframe by countries. The set is grouped by arrival cities and contains only cities whose aggregated number of flights is greater than 115.
 
 
 ```{r}
 source("../02 Data Wrangling/Wranglers2.R", echo = TRUE)
 ```
 
-
+This bar graph represents the Top 10 Most Popular Airports by incoming flights. The cities are listed in alphabetical order.
 
 ```{r}
 source("../03 Visualizations/Visualizations2.R", echo = TRUE)
 ```
 
-
+The third graph is a semi join between US Cities dataset and the city flight dataset.
 
 ```{r}
 source("../02 Data Wrangling/Wranglers3.R", echo = TRUE)
 ```
+
+
+The 3rd graph plots every US airport by its latitude and longitude coordinates creating a vivid graph of the US. Several large cities have been labeled for viewing ease.
 
 
 
@@ -47,16 +55,19 @@ source("../02 Data Wrangling/Wranglers3.R", echo = TRUE)
 source("../03 Visualizations/Visualizations3.R", echo = TRUE)
 ```
 
-
+The PNG below contains a set of graphs that each display a categorical or measure column data. The first four display categorical data while the last six display measure data. The data is found by first running a query that returns a list of categorical columns and measure columns. The categorical categories then loop through a query to generate a data frame that contain the unique instances of the category and the total number of times the unique instance shows up in the data. This data frame is then passed to a function that stores the name of the category, changes the names of the data frames and plugs the data into ggplot to display a scatterplot. The name of the category is used as the x-axis label and the y-axis is labeled “Number of Flights” as default. The graphs are then stored in a list. Then the PNG is generated in the 00 Doc file while outlining the dimensions of the grid layout. The graphs are then arranged within the rows and columns of the PNG’s grid. This process was repeated for the measure categories, but instead the data was plotted on histograms.
 
 ```{r}
-source("../03 Visualizations/Visualizations4.R", echo = FALSE)
+source("../03 Visualizations/Visualizations4.R", echo = TRUE)
 ```
 
-
+The top left graph plots the name of the city by the number of flights that list it as the departure city. The top right graph plots the name of the country by the number of flights that list it as the departure country. The bottom left graph plots the name of the city by the number of flights that list it as the arrival city. The bottom right graph plots the name of the country by the number of flights that list it as the arrival country. The city graphs look very similar and the country graphs look very similar as well. Only a few cities and countries stand out amongst the rest in the plots.
 
 ![](./categoricals.png)
 
 
+The top left graph plots the number of flights that depart from areas located along each degree of longitude. The top middle graph plots the number of flights that depart from areas located along each degree of latitude. The top right graph plots the number of flights that arrive at areas located along each degree of longitude. The bottom left graph plots the number of flights that arrive at areas located along each degree of latitude. The longitude graphs look similar and the latitude graphs look similar as well.
+
+The bottom middle graph plots the total number of city combinations by the number of routes that exist between the two cities in each combination. As you can see, most cities only have one possible route between them. This data also includes routes that take multiple stops between departure and destination. The bottom right graph plots the total number of city combinations by the distance that exists between the two cities in each combination. From the graph we can observe that most cities have around 500 Kilometers between them, and very few have more than 5000 Kilometers between departure and destination.
 
 ![](./categoricals2.png)

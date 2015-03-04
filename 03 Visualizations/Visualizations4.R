@@ -1,7 +1,6 @@
 categoricals <- eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from CITIESTOCITIES"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_mh33483', PASS='orcl_mh33483', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'True'), verbose = TRUE), 1, 2^31-1)))
 
 myplot <- function(df, x) {
-  print(names(df))
   xLabel <- x
   names(df) <- c("x", "n")
   ggplot(df, aes(x=x, y=n)) + geom_point() + xlab(xLabel) + ylab("Number of Flights")
@@ -29,8 +28,9 @@ print(l[[4]], vp = viewport(layout.pos.row = 2, layout.pos.col = 2))
 dev.off()
 
 myplot2 <- function(df, x) {
+  xLabel <- x
   names(df) <- c("x")
-  ggplot(df, aes(x=x)) + geom_histogram()
+  ggplot(df, aes(x=x)) + geom_histogram() + xlab(xLabel)
 }
 
 l <- list()
