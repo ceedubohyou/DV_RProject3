@@ -13,7 +13,7 @@ source("../01 Data/Dataframes.R", echo = TRUE)
 ```
 
 
-First graph is left joined from data from flight data on cities and countries. They are grouped by Departure City with aggregated Distance and Flight Count.
+The first graph is left joined from data from flight data on cities and countries. They are grouped by Departure City with aggregated Distance and Flight Count.
 
 
 ```{r}
